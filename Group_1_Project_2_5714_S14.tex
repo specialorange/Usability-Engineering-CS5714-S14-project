@@ -22,7 +22,7 @@
 }
 \pagestyle{fancy}
 \lhead{Project 2 Group 1 (tjones21 \& razeitz \& special)}
-\rhead{\ref{toc}}
+\rhead{\hyperlink{MyToc}{\small{jump to: }Table of Contents}}
 \cfoot{}
 \lfoot{\thepage}
 \rfoot{\today}
@@ -46,7 +46,7 @@
 
   \textsc{\LARGE Usability Engineering}\\[1.5mm] 
   \textsc{\Large CS/ISE 5714 - Spring 14}\\[1mm] 
-  \textsc{\Large Project 2: Contextual inquiry and contextual analysis}\\[1mm] 
+  \textsc{Project 2: Contextual inquiry and contextual analysis}\\[1mm] 
   %In this project assignment you perform contextual inquiry and analysis, starting with a field visit to understand the existing customer, client, or user work (or play) practice, the activities people undertake to accomplish goals in the work or play domain and the complete work context.
 
   % the deliverable states'One-line description of this project assignment'
@@ -76,11 +76,12 @@
   
   \begingroup
   \def\addvspace#1{}
-    \tableofcontents\label{toc}
+    \tableofcontents\hypertarget{toc}{}
   \endgroup
 \end{titlepage}
 
 \newpage
+% TODO Not sure if we should match all sections to number since we dont have all sections and some overlap
 \section{System Concept Statement} %1
 % To make this report a stand-alone document, repeat the latest version of your system concept statement, as a synopsis of your project. UPDATE it addressing the comments from Project 1. Include just the concept statement, not the full project 1. 
 
