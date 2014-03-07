@@ -13,10 +13,16 @@
 \usepackage{subcaption} 
 \usepackage{fancyhdr} % adds headers and footers
 \usepackage{indentfirst} % Indents the first paragraph in a section
-
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=blue,
+    urlcolor=blue
+}
 \pagestyle{fancy}
 \lhead{Project 2 Group 1 (tjones21 \& razeitz \& special)}
-\rhead{}
+\rhead{\ref{toc}}
 \cfoot{}
 \lfoot{\thepage}
 \rfoot{\today}
@@ -24,7 +30,7 @@
 % \renewcommand{\headrulewidth}{0.4pt}
 % \renewcommand{\footrulewidth}{0.4pt}
 \newcommand{\HRule}{\rule{\linewidth}{0.5mm}} % Defines a new command for the horizontal lines, change thickness here
-\renewcommand{\contentsname}{Project Content Navigation (clickable)}
+\renewcommand{\contentsname}{Project Content Navigation (\textcolor{blue}{clickable})}
 \graphicspath{{img/}} % Specifies the directory where pictures are stored
 
 % \geometry{a4paper} % Set the page size to be A4 as opposed to the default US Letter
@@ -40,6 +46,7 @@
 
   \textsc{\LARGE Usability Engineering}\\[1.5mm] 
   \textsc{\Large CS/ISE 5714 - Spring 14}\\[1mm] 
+  \textsc{\Large Project 2: Contextual inquiry and contextual analysis}\\[1mm] 
   %In this project assignment you perform contextual inquiry and analysis, starting with a field visit to understand the existing customer, client, or user work (or play) practice, the activities people undertake to accomplish goals in the work or play domain and the complete work context.
 
   % the deliverable states'One-line description of this project assignment'
@@ -51,9 +58,9 @@
   \begin{minipage}{0.4\textwidth}
   \begin{flushleft} \small
   \emph{TEAM 1:}\\
-  T.C. \textsc{Jones} \href{mailto:tjones21@vt.edu}{\textcolor{blue}{tjones21@vt.edu}}\\
-  Rebecca \textsc{Zeitz} \href{mailto:razeitz@vt.edu}{\textcolor{blue}{razeitz@vt.edu}}\\
-  Chris \textsc{Frisina}  \href{mailto:special@vt.edu}{\textcolor{blue}{special@vt.edu}}\\
+  T.C. \textsc{Jones} \href{mailto:tjones21@vt.edu}{tjones21@vt.edu}\\
+  Rebecca \textsc{Zeitz} \href{mailto:razeitz@vt.edu}{razeitz@vt.edu}\\
+  Chris \textsc{Frisina}  \href{mailto:special@vt.edu}{special@vt.edu}\\
   \end{flushleft}
   \end{minipage}
   ~
@@ -61,7 +68,7 @@
   \begin{flushright} \small
   \emph{Client:} \\
   The Writing Center\\
-  Jennifer \textsc{Lawrence}  \href{mailto:jlwrnc@vt.edu}{\textcolor{blue}{jlwrnc@vt.edu}}
+  Jennifer \textsc{Lawrence}  \href{mailto:jlwrnc@vt.edu}{jlwrnc@vt.edu}
   %Assistant Director of the Writing Center\\
   \end{flushright}
   \end{minipage}\\
@@ -69,7 +76,7 @@
   
   \begingroup
   \def\addvspace#1{}
-  \tableofcontents
+    \tableofcontents\label{toc}
   \endgroup
 \end{titlepage}
 
@@ -90,13 +97,17 @@
 % – Stockholders  
 % – Even general public
 
-% I dont think we should start of with the product without noting who is involved and the base for a problem -chris
+% I dont think we should start of with the product without noting who is involved and the base for a problem -CHRIS
 Inkhorn will serve the Writing Center by providing a common ground tool for use among coaches and other staff.
 It will allow users, the Writing Center staff, to match coaches with patrons requesting a session by providing a more systematic, but still personalized, scheduling process.
+% I dont know what this means -CHRIS
 As a feedback system, Inkhorn will allow for patron privacy not currently available.
+% good -CHRIS
 Furthermore, Inkhorn will serve as a tool for coaches to suggest resources and methods that will coincide with the needs and goals of the patrons.
 Inkhorn will help tailor writing enhancing coaching services to specific patrons’ needs, such as with conference or course papers, technical documents, personal statements, or other interpersonal communications.
+% I dont think this is what we are offering, as this is an entirely different scope.  Now they converse on IH as well? -CHRIS
 Playing off the informal but professional atmosphere of the Writing Center, Inkhorn will be a space for users to converse and share thoughts and ideas.
+% i am not sure a bridge is the best description we can come up with -CHRIS
 In essence, Inkhorn will act as a bridge between the coaches, administrative staff, and patrons.
 
 --
@@ -104,9 +115,9 @@ In essence, Inkhorn will act as a bridge between the coaches, administrative sta
 The Virginia New River Valley community members often seek support services surrounding improving their communication skills and understanding of the English language.
 The Virginia Tech Writing Center (WC) provides varying personal coaching services for locals in addition to VT affiliates.
 To maintain the personal touch the WC exemplifies, we propose Inkhorn, an automated scheduling and feedback system, will help tailor coaching services to patrons to develop their skills to enhance their writing, such as conference or class papers, personal statements, and interpersonal communications. 
-To increase a positive milieu between coach and patron, Inkhorn will help manage recommendations from the coach to the patron, 
-Inkhorn will also help promote services offered by WC, manage session scheduling with compatible coaches, automate reporting, provide a continual coach feedback system, manage forms, and suggest appropriate tools for patron goals.
-%------------------------------------------------
+% Speak directly towards the emotional impact -CHRIS
+To increase a positive milieu between coach and patron, Inkhorn will help manage recommendations from the coach that coincide with the needs of the patron, as well as streamline and retain coach feedback from the patron.
+Inkhorn will also help promote services offered by WC, manage session scheduling with compatible coaches, automate reporting, provide a continual coach feedback system, manage forms, and suggest appropriate tools for patrons' goals.
 
 \section{Tailor The Scope} %2
 % Describe how you made decisions to tailor the scope of this assignment for your own project and give justification where appropriate
@@ -129,7 +140,7 @@ Our initial phone conversation with the WC hinted that the Assistant Director Je
 Reviewing the website also helped ascertain the majority of the services provided by the WC.
 She also works as a coach, which was known from the initial email that she replied to about meeting for an interview.
 A brainstorming session with group members allowed us to iterate over questions that would provide information to complete the assignment, as well as provide a structured interview style that would also serve as a positive first introduction.
-We noticed that some questions were best addressed to specific roles, so we separated the questions accordingly for Jennifer, and used the \'coach\' questions for Nneoma Enyi Nwankwo, another coach whose schedule aligned and agreed to interview in person with a recording.
+We noticed that some questions were best addressed to specific roles, so we separated the questions accordingly for Jennifer, and used the `Coach' questions for Nneoma Enyi Nwankwo, another coach whose schedule aligned and agreed to interview in person with a recording.
 We plan to continue to interview other coaches who have different skills, in addition to the remaining people who are involved in the information flow related to the services provided by the WC.
 
 \section{Interview Questions} %5
@@ -262,9 +273,9 @@ We plan to continue to interview other coaches who have different skills, in add
 \section{Raw Data and Work Activity Notes} %12
 % Show samples ( a dozen or so) of your raw data notes and the corresponding work activity notes you extracted.
   \subsection*{Audio Interview Notes} % Sub-sub-section
-  \href{http://www.dropbox.specialorange.com/vt/5714%20UX/}{\textcolor{blue}{Audio Folder}}\\
-  \href{http://www.dropbox.specialorange.com/vt/5714%20UX/ADir1.aac}{\textcolor{blue}{Assistant Director 1}}\\
-  \hspace{1.5cm}\href{http://www.dropbox.specialorange.com/vt/5714%20UX/C1.aac}{\textcolor{blue}{Coach 1}}\\
+  \href{http://www.dropbox.specialorange.com/vt/5714%20UX/}{Audio Folder}\\
+    \href{http://www.dropbox.specialorange.com/vt/5714%20UX/ADir1.aac}{Assistant Director 1}\\
+    \href{http://www.dropbox.specialorange.com/vt/5714%20UX/C1.aac}{Coach 1}\\
 
 \section{Building the WAAD} %13
 % Describe your process of building the WAAD. 
@@ -289,60 +300,60 @@ We plan to continue to interview other coaches who have different skills, in add
 \section{Team Photos} %14
 % Include a few photos of your team at work, if appropriate
   \begin{figure}[H]
-  \begin{subfigure}{.5\linewidth}
-  \centering
-  \includegraphics[width=0.95\linewidth]{TeamAtWork1}
-  \caption{T.C. at the WAAD}
-  \label{fig:team_photo_1}
-  \end{subfigure}%
-  \begin{subfigure}{.5\linewidth}
-  \centering
-  \includegraphics[width=0.95\linewidth]{TeamAtWork3}
-  \caption{Rebecca at the WAAD}
-  \label{fig:team_photo_3}
-  \end{subfigure}\\[1ex]
-  \begin{subfigure}{\linewidth}
-  \centering
-  \includegraphics[width=0.55\linewidth]{TeamAtWork4}
-  \caption{Chris at the flow model diagram}
-  \label{fig:team_photo_4}
-  \end{subfigure}
-  \caption{The team in action.}
-  \label{fig:test}
+    \begin{subfigure}{.5\linewidth}
+      \centering
+      \includegraphics[width=0.95\linewidth]{TeamAtWork1}
+      \caption{T.C. at the WAAD}
+      \label{fig:team_photo_1}
+    \end{subfigure}%
+    \begin{subfigure}{.5\linewidth}
+      \centering
+      \includegraphics[width=0.95\linewidth]{TeamAtWork3}
+      \caption{Rebecca at the WAAD}
+      \label{fig:team_photo_3}
+    \end{subfigure}\\[1ex]
+    \begin{subfigure}{\linewidth}
+      \centering
+      \includegraphics[width=0.55\linewidth]{TeamAtWork4}
+      \caption{Chris at the flow model diagram}
+      \label{fig:team_photo_4}
+    \end{subfigure}
+    \caption{The team in action}
+    \label{fig:test}
   \end{figure}
 
 \section{WAAD Photos} %15
 % Include a few photos of your WAAD. 
   \begin{figure}[H]
     \begin{subfigure}{.5\linewidth}
-    \centering
-    \includegraphics[width=0.95\linewidth]{WAAD_version1}
-    \caption{Phase 1}
-    \label{fig:WAAD_version1}
+      \centering
+      \includegraphics[width=0.95\linewidth]{WAAD_version1}
+      \caption{Phase 1}
+      \label{fig:WAAD_version1}
     \end{subfigure}%
     \begin{subfigure}{.5\linewidth}
-    \centering
-    \includegraphics[width=0.95\linewidth]{WAAD_version2}
-    \caption{Phase 2}
-    \label{fig:WAAD_version2}
+      \centering
+      \includegraphics[width=0.95\linewidth]{WAAD_version2}
+      \caption{Phase 2}
+      \label{fig:WAAD_version2}
     \end{subfigure}\\[1ex]
     \begin{subfigure}{.5\linewidth}
-    \centering
-    \includegraphics[width=0.95\linewidth]{WAAD_version3}
-    \caption{Phase 3}
-    \label{fig:WAAD_version3}
+      \centering
+      \includegraphics[width=0.95\linewidth]{WAAD_version3}
+      \caption{Phase 3}
+      \label{fig:WAAD_version3}
     \end{subfigure}%
     \begin{subfigure}{.5\linewidth}
-    \centering
-    \includegraphics[width=0.95\linewidth]{WAAD_version4}
-    \caption{Phase 4}
-    \label{fig:WAAD_version4}
+      \centering
+      \includegraphics[width=0.95\linewidth]{WAAD_version4}
+      \caption{Phase 4}
+      \label{fig:WAAD_version4}
     \end{subfigure}\\[1ex]
     \begin{subfigure}{\linewidth}
-    \centering
-    \includegraphics[width=0.55\linewidth]{WAAD_version5}
-    \caption{Phase 5}
-    \label{fig:WAAD_version5}
+      \centering
+      \includegraphics[width=0.55\linewidth]{WAAD_version5}
+      \caption{Phase 5}
+      \label{fig:WAAD_version5}
     \end{subfigure}
     \caption{Evolution of the WAAD}
     \label{fig:WAAD}
@@ -379,39 +390,50 @@ We plan to continue to interview other coaches who have different skills, in add
   \end{description} 
 
 \section{Flow Model Diagram} %17
-% Show your initial flow model diagram. This should be described from a broad view, not just the flow addressed by your system. 
-
+% Show your initial flow model diagram. This should be described from a broad view, not just the flow addressed by your system.
   \begin{figure}[H]
     \begin{subfigure}{.5\linewidth}
-    \centering
-    \includegraphics[width=0.95\linewidth]{flow/init}
-    \caption{Initial flow chart denoting groupings}
-    \label{fig:flowchart_initial}
+      \centering
+      \includegraphics[width=0.95\linewidth]{flow/flowchart_initial}
+      \caption{Initial flow chart denoting groupings}
+      \label{fig:flowchart_initial}
     \end{subfigure}%
     \begin{subfigure}{.5\linewidth}
-    \centering
-    \includegraphics[width=0.95\linewidth]{flow/flowchart_without_arrows}
-    \caption{Flow chart in a new grouping}
-    \label{fig:flowchart_without_arrows}
+      \centering
+      \includegraphics[width=0.95\linewidth]{flow/flowchart_without_arrows}
+      \caption{Flow chart in a new grouping}
+      \label{fig:flowchart_without_arrows}
     \end{subfigure}\\[1ex]
     \begin{subfigure}{.5\linewidth}
-    \centering
-    \includegraphics[width=0.95\linewidth]{flow/flowchart_with_arrows}
-    \caption{Flow chart with arrows}
-    \label{fig:flowchart_with_arrows}
+      \centering
+      \includegraphics[width=0.95\linewidth]{flow/flowchart_with_arrows}
+      \caption{Flow chart with arrows}
+      \label{fig:flowchart_with_arrows}
     \end{subfigure}%
     \begin{subfigure}{.5\linewidth}
+      \centering
+      \includegraphics[width=0.95\linewidth]{flow/flowchart_final}
+      \caption{The Final Flowchart with Key}
+      \label{fig:flowchart_final_small}
+    \end{subfigure}
+    \caption{Evolution of the Workflow Diagram}
+    \label{fig:Workflow_Evolution}
+  \end{figure}
+
+\begin{samepage}
+\section{Work and Machine Role Nodes} %18
+% Show major work roles and machine roles as nodes. 
+\nopagebreak
+Work and machine roles are noted as orange squares in the work flow figure of \ref{fig:Workflow_final}.
+  \begin{figure}{H}
     \centering
     \includegraphics[width=0.95\linewidth]{flow/flowchart_final}
     \caption{The Final Flowchart with Key}
-    \label{fig:flowchart_final}
-    \end{subfigure}\\[1ex]
-    \caption{Evolution of the Workflow Diagram}
-    \label{fig:WAAD}
+    \label{fig:flowchart_final_large}
+    \caption{The Complete Workflow Diagram}
+    \label{fig:Workflow_final}
   \end{figure}
-
-\section{Work and Machine Role Nodes} %18
-% Show major work roles and machine roles as nodes. 
+\end{samepage}
 
 \section{Information and Work Flow Arcs} %19
 % Show information and work flow as labeled arrows (arcs).
