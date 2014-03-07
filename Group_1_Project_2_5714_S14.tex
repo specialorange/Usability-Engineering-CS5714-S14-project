@@ -1,17 +1,3 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Simple Sectioned Essay Template
-% LaTeX Template
-%
-% This template has been downloaded from:
-% http://www.latextemplates.com
-%
-% Note:
-% The \lipsum[#] commands throughout this template generate dummy text
-% to fill the template out. These commands should all be removed when 
-% writing essay content.
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 %----------------------------------------------------------------------------------------
 %	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
 %----------------------------------------------------------------------------------------
@@ -19,81 +5,77 @@
 \documentclass[12pt]{article} % Default font size is 12pt, it can be changed here
 
 \usepackage{geometry} % Required to change the page size to A4
-\geometry{a4paper} % Set the page size to be A4 as opposed to the default US Letter
-
 \usepackage{graphicx} % Required for including pictures
-
 \usepackage{float} % Allows putting an [H] in \begin{figure} to specify the exact location of the figure
-\usepackage{wrapfig} % Allows in-line images such as the example fish picture
+\usepackage{hyperref} % Enables hyperlinks and text reference clicking
+\usepackage{color} % Enables text font coloring
+\usepackage{caption} 
+\usepackage{subcaption} 
+\usepackage{fancyhdr} % adds headers and footers
+\usepackage{indentfirst} % Indents the first paragraph in a section
 
-\usepackage{lipsum} % Used for inserting dummy 'Lorem ipsum' text into the template
+\pagestyle{fancy}
+\lhead{Project 2 Group 1 (tjones21 \& razeitz \& special)}
+\rhead{}
+\cfoot{}
+\lfoot{\thepage}
+\rfoot{\today}
 
-\usepackage{hyperref}
-\usepackage{color}
-
-%\setlength\parindent{0pt} % Uncomment to remove all indentation from paragraphs
-
+% \renewcommand{\headrulewidth}{0.4pt}
+% \renewcommand{\footrulewidth}{0.4pt}
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}} % Defines a new command for the horizontal lines, change thickness here
+\renewcommand{\contentsname}{Project Content Navigation (clickable)}
 \graphicspath{{img/}} % Specifies the directory where pictures are stored
+
+% \geometry{a4paper} % Set the page size to be A4 as opposed to the default US Letter
+%\usepackage{lipsum} % Used for inserting dummy 'Lorem ipsum' text into the template
+%\usepackage{wrapfig} % Allows in-line images such as the example fish picture
+%\setlength\parindent{0pt} % Uncomment to remove all indentation from paragraphs
 
 \begin{document}
 
-%----------------------------------------------------------------------------------------
-%	TITLE PAGE
-%----------------------------------------------------------------------------------------
-
 \begin{titlepage}
 
-\newcommand{\HRule}{\rule{\linewidth}{0.5mm}} % Defines a new command for the horizontal lines, change thickness here
+  \center % Center everything on the page
 
-\center % Center everything on the page
+  \textsc{\LARGE Usability Engineering}\\[1.5mm] 
+  \textsc{\Large CS/ISE 5714 - Spring 14}\\[1mm] 
+  %In this project assignment you perform contextual inquiry and analysis, starting with a field visit to understand the existing customer, client, or user work (or play) practice, the activities people undertake to accomplish goals in the work or play domain and the complete work context.
 
-\textsc{\LARGE Usability Engineering}\\[1.5cm] % Name of your university/college
-\textsc{\Large CS/ISE 5714 - Spring 14}\\[0.5cm] % Major heading such as course name
-\textsc{\large  Project 2: Contextual inquiry and contextual analysis}\\[0.5cm] % Minor heading such as course title
+  % the deliverable states'One-line description of this project assignment'
+  % I think the name of the 'product' and its general purpose is good a description of the deliverable
+  { \small Inkhorn: a scheduling and feedback system enhance tailored coaching services to patrons }\\
+  \HRule
+  \vspace{4mm}
 
-\HRule \\[0.4cm]
-{ \huge \bfseries The Writing Center }\\[0.4cm] % Title of your document
-\HRule \\[0.4cm]
-{ \small Inkhorn: a scheduling and feedback system to help tailor coaching services to patrons }\\[0.4cm] % Title of your document
-\vspace{1.5cm}
-
-
-\begin{minipage}{0.4\textwidth}
-\begin{flushleft} \large
-\emph{TEAM 1:}\\
-TC \textsc{Jones} \href{mailto:tjones21@vt.edu}{\textcolor{blue}{tjones21@vt.edu}}\\
-Rebecca \textsc{Zeitz} \href{mailto:razeitz@cs.vt.edu}{\textcolor{blue}{razeitz@vt.edu}}\\
-Chris \textsc{Frisina}  \href{mailto:special@vt.edu}{\textcolor{blue}{special@vt.edu}}\\
-\end{flushleft}
-\end{minipage}
-~
-\begin{minipage}{0.4\textwidth}
-\begin{flushright} \large
-\emph{Client:} \\
-Jennifer \textsc{Lawrence}  \href{mailto:jlwrnc@vt.edu}{\textcolor{blue}{jlwrnc@vt.edu}}\\
-\end{flushright}
-\end{minipage}\\[4cm]
-
-{\large \today}\\[3cm] % Date, change the \today to a set date if you want to be precise
-
-%\includegraphics{Logo}\\[1cm] % Include a department/university logo - this will require the graphicx package
-
-\vfill % Fill the rest of the page with whitespace
-
+  \begin{minipage}{0.4\textwidth}
+  \begin{flushleft} \small
+  \emph{TEAM 1:}\\
+  T.C. \textsc{Jones} \href{mailto:tjones21@vt.edu}{\textcolor{blue}{tjones21@vt.edu}}\\
+  Rebecca \textsc{Zeitz} \href{mailto:razeitz@vt.edu}{\textcolor{blue}{razeitz@vt.edu}}\\
+  Chris \textsc{Frisina}  \href{mailto:special@vt.edu}{\textcolor{blue}{special@vt.edu}}\\
+  \end{flushleft}
+  \end{minipage}
+  ~
+  \begin{minipage}{0.4\textwidth}
+  \begin{flushright} \small
+  \emph{Client:} \\
+  The Writing Center\\
+  Jennifer \textsc{Lawrence}  \href{mailto:jlwrnc@vt.edu}{\textcolor{blue}{jlwrnc@vt.edu}}
+  %Assistant Director of the Writing Center\\
+  \end{flushright}
+  \end{minipage}\\
+  [5mm]
+  
+  \begingroup
+  \def\addvspace#1{}
+  \tableofcontents
+  \endgroup
 \end{titlepage}
 
-%----------------------------------------------------------------------------------------
-%	TABLE OF CONTENTS
-%----------------------------------------------------------------------------------------
-
-\tableofcontents % Include a table of contents
-\newpage % Begins the essay on a new page instead of on the same page as the table of contents 
-
-%----------------------------------------------------------------------------------------
-%	INTRODUCTION
-%----------------------------------------------------------------------------------------
-
-\section{Concept Statement} % Major section
+\newpage
+\section{System Concept Statement} %1
+% To make this report a stand-alone document, repeat the latest version of your system concept statement, as a synopsis of your project. UPDATE it addressing the comments from Project 1. Include just the concept statement, not the full project 1. 
 
 % What is the system name?  
 % –Who are the system users?  
@@ -108,54 +90,266 @@ Jennifer \textsc{Lawrence}  \href{mailto:jlwrnc@vt.edu}{\textcolor{blue}{jlwrnc@
 % – Stockholders  
 % – Even general public
 
-% Rebecca
-% Inkhorn will serve the Writing Center by providing a common ground tool for use among coaches and other staff.  It will allow users, the Writing Center staff, to match coaches with patrons requesting a session by providing a more systematic, but still personalized, scheduling process.  As a feedback system, Inkhorn will allow for patron privacy not currently available.  Furthermore, Inkhorn will serve as a tool for coaches to suggest resources and methods that will coincide with the needs and goals of the patrons.  Inkhorn will help tailor writing enhancing coaching services to specific patrons’ needs, such as with conference or course papers, technical documents, personal statements, or other interpersonal communications.  Playing off the informal but professional atmosphere of the Writing Center, Inkhorn will be a space for users to converse and share thoughts and ideas.  In essence, Inkhorn will act as a bridge between the coaches, administrative staff, and patrons.
+% I dont think we should start of with the product without noting who is involved and the base for a problem -chris
+Inkhorn will serve the Writing Center by providing a common ground tool for use among coaches and other staff.
+It will allow users, the Writing Center staff, to match coaches with patrons requesting a session by providing a more systematic, but still personalized, scheduling process.
+As a feedback system, Inkhorn will allow for patron privacy not currently available.
+Furthermore, Inkhorn will serve as a tool for coaches to suggest resources and methods that will coincide with the needs and goals of the patrons.
+Inkhorn will help tailor writing enhancing coaching services to specific patrons’ needs, such as with conference or course papers, technical documents, personal statements, or other interpersonal communications.
+Playing off the informal but professional atmosphere of the Writing Center, Inkhorn will be a space for users to converse and share thoughts and ideas.
+In essence, Inkhorn will act as a bridge between the coaches, administrative staff, and patrons.
+
+--
 
 The Virginia New River Valley community members often seek support services surrounding improving their communication skills and understanding of the English language.
-The Virginia Tech Writing Center (WC) provides varying personal coaching services for these locals in addition to VT affiliates.
-Inkhorn, an automated scheduling and feedback system, will help tailor coaching services to patrons to develop their skills to enhance their writing, such as conference or class papers, personal statements, and interpersonal communications. 
-Inkhorn will help promote services offered by WC, manage session scheduling with compatible coaches, automate reporting, provide a continual coach feedback system, manage forms, and suggest appropriate tools for patron goals.
-
+The Virginia Tech Writing Center (WC) provides varying personal coaching services for locals in addition to VT affiliates.
+To maintain the personal touch the WC exemplifies, we propose Inkhorn, an automated scheduling and feedback system, will help tailor coaching services to patrons to develop their skills to enhance their writing, such as conference or class papers, personal statements, and interpersonal communications. 
+To increase a positive milieu between coach and patron, Inkhorn will help manage recommendations from the coach to the patron, 
+Inkhorn will also help promote services offered by WC, manage session scheduling with compatible coaches, automate reporting, provide a continual coach feedback system, manage forms, and suggest appropriate tools for patron goals.
 %------------------------------------------------
 
-\section{Choosing a Client Process} % Sub-section
+\section{Tailor The Scope} %2
+% Describe how you made decisions to tailor the scope of this assignment for your own project and give justification where appropriate
+  Among our initial ideas for clients and problems, we focused on writing.
+  % we should probably just say writings, since non technical and sotries is also 'repetitive', although this isn't a point of contention for me given it isn't my strongest domain-CHRIS
+  Our initial problem was in the realm of collaborative writing techniques for technical, novel, and story telling writers.
+  Given client scheduling problems, we had to abandon this idea.
+  % the client is both the wc and JL, I dont think it is needed to specify JL - CHRIS
+  Our next client in the writing domain we chose was the Virginia Tech Writing Center (WC), and the Assistant Director Jennifer Lawrence.
+  % I think the years enhances our assessment of her knowledge - CHRIS
+  She has served in this role for 7 years, and her extensive knowledge alongside positional status makes her the ideal candidate within the WC to initially contact and get organizational information, as well as follow communication for project details.
 
-Among our initial ideas for clients and problems, we focused on writing.
-Our initial problem was in the realm of collaborative writing techniques for technical, novel, and story telling writers.
-Given client scheduling problems, we had to abandon this idea.
-Our next client in the writing domain we chose was the Virginia Tech Writing Center (WC), and the Assistant Director Jennifer Lawrence.
-She has served in this role for 7 years, and her extensive knowledge alongside positional status makes her the ideal candidate within the WC to initially contact and get organizational information, as well as follow communication for project details.
+\section{Preparation for Interview} %3
+% Describe the process of preparation for interviewing and observation in your contextual inquiry. 
 
-3 
+\section{Who Was Interviewed} %4
+% How many client representatives and/or users did you interview in total and how did you decide that? List their names, job titles, responsibilities, and anything else that would help describe their role in the enterprise.
+Excluding our previous client, we interviewed two people, encompassing three distinct roles (one person has two roles).
+Our initial phone conversation with the WC hinted that the Assistant Director Jennifer Lawrence was the best initial contact person for the majority of the assignment concerns.
+Reviewing the website also helped ascertain the majority of the services provided by the WC.
+She also works as a coach, which was known from the initial email that she replied to about meeting for an interview.
+A brainstorming session with group members allowed us to iterate over questions that would provide information to complete the assignment, as well as provide a structured interview style that would also serve as a positive first introduction.
+We noticed that some questions were best addressed to specific roles, so we separated the questions accordingly for Jennifer, and used the \'coach\' questions for Nneoma Enyi Nwankwo, another coach whose schedule aligned and agreed to interview in person with a recording.
+We plan to continue to interview other coaches who have different skills, in addition to the remaining people who are involved in the information flow related to the services provided by the WC.
 
+\section{Interview Questions} %5
+% Include a copy here of the initial questions you prepared for the interviews. 
+  \begin{tabbing}
+  Assistant Director
+  \end{tabbing}
+  \begin{enumerate} \itemsep1pt \parskip0pt \parsep0pt
+  	\item How long have you served as a writing director?
+  	\item Who is your supervisor?
+  	\item Are there any requirements you have to do as a VT affiliated service?
+  	\item How would you describe the atmosphere of the Writing Center?
+  	\item What services does the writing center provide?
+  	\item What policies exist?
+  	\item Are their any current initiatives being offered or planned at TWC
+  	\item How long does a coach typically work at TWC 
+  	\item What compensation do coaches receive?
+  	\item What types of questions and writings do writers bring in? (see website for what student can bring in)
+  	\item In a session, how are the WC coaches expected to get their thoughts and comments across to the writer? {on paper, orally, etc.}
+  	\item Is there any record keeping?
+  	\item Is there a feedback, rating system, or complaint system?
+  	\item What contingency plans are there (for example, what if a coach doesn’t show?  what if a writer doesn’t show?)
+  	\item Does coach seniority gain any benefits, tangible or otherwise?
+  	\item What auxiliary management tools do you use?
+  \end{enumerate}
+  \begin{tabbing}
+  Coach(es)
+  \end{tabbing}
+  \begin{enumerate} \itemsep1pt \parskip0pt \parsep0pt
+  	\item What year are you in school?
+  	\item What is your major or majors?  Any minors?
+  	\item Why did you decide to become a Writing Center coach?
+  	\item How long have you been working at the Writing Center?
+  	\item How long do you plan on working at the Writing Center?
+  	\item As a coach, how would you describe the atmosphere of a session?
+  	\item Describe the overall process when a writer comes into the WC?
+  	\item Are there any other tools you use?
+  	\item Are there assigned seating arrangements for the coaches?
+  	\item Do writers make multiple appointments to discuss the same work?
+  	\item How do you keep track of a writer’s drafts?
+  	\item How do you utilize a writer’s past drafts?
+  	\item Do you ever have multiple writers come in for help on the same document?
+  	\item How does the user take notes?
+  	\item Are there any policies that you follow? 
+  	\item What policies are outdated?  
+  	\item In a session, how do you get your thoughts and comments across to the writer? {on paper, orally, etc.}
+  	\item How do you give your ideas and comments (verbally, on paper, etc.)?
+  	\item What are some of the harder things to help writers with?
+  	\item How/where/who do you get your feedback from?
+  	\item Do you feel you get enough feedback? Is it constructive?
+  	\item What things do you enjoy about your work here?
+  	\item What do you feel your strengths are as a coach?
+  	\item Do you know the other coaches?
+  	\item Are you happy with your compensation?
+  	\item How does working with ESL writers differ from native speakers?
+  	\item Do you help with LaTeX?
+  	\item Do you write frequently outside of work?  If so, what types of works or genres do you write?
+  \end{enumerate}
 
-\subsection{Description} % Sub-section
+\section{Meeting Description} %6
+% Describe briefly how the meeting went with your initial contacts. 
 
-\subsection{Interviews} % Sub-section
+\section{Data Collection} %7
+% Describe how you collected raw contextual data and what kind you collected
 
-4 | 5 | 6 | 7
+\section{Artifacts} %8
+% Show photos or scans of any work artifacts you collected. 
 
-\subsubsection{WADD} % Sub-sub-section
+\section{Photos} %9
+% Show a representative selection of photos you took. 
+  \begin{figure}[H]
+  \begin{subfigure}{.5\linewidth}
+  \centering
+  \includegraphics[width=0.75\linewidth]{WC1}
+  \caption{}
+  \label{fig:WC1}
+  \end{subfigure}%
+  \begin{subfigure}{.5\linewidth}
+  \centering
+  \includegraphics[width=0.75\linewidth]{WC2}
+  \caption{}
+  \label{fig:WC2}
+  \end{subfigure}\\[1ex]
+  \begin{subfigure}{.5\linewidth}
+  \centering
+  \includegraphics[width=0.75\linewidth]{WC3}
+  \caption{}
+  \label{fig:WC3}
+  \end{subfigure}%
+  \begin{subfigure}{.5\linewidth}
+  \centering
+  \includegraphics[width=0.75\linewidth]{WC4}
+  \caption{}
+  \label{fig:WC4}
+  \end{subfigure}\\[1ex]
+  \begin{subfigure}{.5\linewidth}
+  \centering
+  \includegraphics[width=0.75\linewidth]{WC5}
+  \caption{}
+  \label{fig:WC5}
+  \end{subfigure}%
+  \begin{subfigure}{.5\linewidth}
+  \centering
+  \includegraphics[width=0.75\linewidth]{WC6}
+  \caption{}
+  \label{fig:WC6}
+  \end{subfigure}\\[1ex]
+  \begin{subfigure}{.5\linewidth}
+  \centering
+  \includegraphics[width=0.75\linewidth]{WC7}
+  \caption{}
+  \label{fig:WC7}
+  \end{subfigure}%
+  \begin{subfigure}{.5\linewidth}
+  \centering
+  \includegraphics[width=0.75\linewidth]{WC8}
+  \caption{}
+  \label{fig:WC8}
+  \end{subfigure}
+  \caption{The Writing Center.}
+  \label{fig:TheWritingCenter}
+  \end{figure}
 
-For building the Work Activity Affinity Diagram (WAAD), the raw data was synthesized into work activity notes, which were written on green and yellow sticky notes so that the colors would blend together.
-We left the bolder colors for the hierarchical categorization labels for the developed clusters of notes.  Each work activity note was given a source ID.
-The first part of the interview with Jennifer Lawrence concerning the work role of Assistant Director of the Writing Center was denoted by the source ID “ADIR”.
-The second part of that interview that concerned her work role as a Writing Center coach was denoted by the source ID “C1”.
-For the interview with Nneoma Enyi Nwankwo, a writing center coach, the source ID of “C2” was used. 
+\section{Sketches} %10
+% Show scans of any sketches you made in the field
 
-Our team added the sticky notes to a whiteboard, grouping similar activity notes together and rearranging them as new notes were added or new connections or relationships between the activity notes were recognized.  Once a category was formulated, top-level cluster labels, the blue sticky notes in the images, were added atop their respective clusters.  Some of these top-level cluster labels were representative of work roles.  If two notes were recognized as holding the same content, one note was stuck to the bottom of the other, so that they were grouped together.  This stage of the process is represented by the WAAD version 1 image. 
+\section{Task Data} %11
+% Give samples of task data and other data you collected. 
 
-The top-level cluster labels were good for overall categorization, but the clusters from these were too broad.  These clusters were further broken down into sub-sections by grouping the activity notes into even more specific clusters, which indicated more specific, sub-level cluster labels, the orange sticky notes in the images.  In the WAAD version 2 image, this process of sub-clustering also resulted in the creation of a new top-level cluster label, Coach-Patron Interactions which pulled notes out of the Coach and Patron clusters.   The WAAD version 3 image shows the formalization of three of the top-level and 7 of the sub-level clusters.  The sub-level clustering process was repeated for the remaining clusters, as seen in the WAAD version 4 until the result was the final WAAD version 5.
-% WADD PICTURES
-\begin{figure}[H] % Example image
-\center{\includegraphics[width=0.5\linewidth]{placeholder}}
-\caption{Example image.}
-\label{fig:speciation}
-\end{figure}
+\section{Raw Data and Work Activity Notes} %12
+% Show samples ( a dozen or so) of your raw data notes and the corresponding work activity notes you extracted.
+  \subsection*{Audio Interview Notes} % Sub-sub-section
+  \href{http://www.dropbox.specialorange.com/vt/5714%20UX/}{\textcolor{blue}{Audio Folder}}\\
+  \href{http://www.dropbox.specialorange.com/vt/5714%20UX/ADir1.aac}{\textcolor{blue}{Assistant Director 1}}\\
+  \hspace{1.5cm}\href{http://www.dropbox.specialorange.com/vt/5714%20UX/C1.aac}{\textcolor{blue}{Coach 1}}\\
 
-%------------------------------------------------
+\section{Building the WAAD} %13
+% Describe your process of building the WAAD. 
+  For building the Work Activity Affinity Diagram (WAAD), the raw data was synthesized into work activity notes, which were written on green and yellow sticky notes so that the colors would blend together.
+  We left the bolder colors for the hierarchical categorization labels for the developed clusters of notes.  Each work activity note was given a source ID.
+  The first part of the interview with Jennifer Lawrence concerning the work role of Assistant Director of the Writing Center was denoted by the source ID “ADIR”.
+  The second part of that interview that concerned her work role as a Writing Center coach was denoted by the source ID “C1”.
+  For the interview with Nneoma Enyi Nwankwo, a writing center coach, the source ID of “C2” was used. 
 
-\section{Work Roles} % Sub-sub-section
+  Our team added the sticky notes to a whiteboard, grouping similar activity notes together and rearranging them as new notes were added or new connections or relationships between the activity notes were recognized.
+  Once a category was formulated, top-level cluster labels, the blue sticky notes in the images, were added atop their respective clusters.
+  Some of these top-level cluster labels were representative of work roles.
+  If two notes were recognized as holding the same content, one note was stuck to the bottom of the other, so that they were grouped together.
+  This stage of the process is represented by Figure~\ref{fig:WAAD_version1}. 
+
+  The top-level cluster labels were good for overall categorization, but the clusters from these were too broad.
+  These clusters were further broken down into sub-sections by grouping the activity notes into even more specific clusters, which indicated more specific, sub-level cluster labels, the orange sticky notes in the images.
+  In Figure~\ref{fig:WAAD_version2}, this process of sub-clustering also resulted in the creation of a new top-level cluster label, Coach-Patron Interactions which pulled notes out of the Coach and Patron clusters.
+  Figure~\ref{fig:WAAD_version3} shows the formalization of three of the top-level and 7 of the sub-level clusters.
+  The sub-level clustering process was repeated for the remaining clusters, as seen in Figure~\ref{fig:WAAD_version4}, until the final WAAD evolved, shown in Figure~\ref{fig:WAAD_version5}.
+
+\section{Team Photos} %14
+% Include a few photos of your team at work, if appropriate
+  \begin{figure}[H]
+  \begin{subfigure}{.5\linewidth}
+  \centering
+  \includegraphics[width=0.95\linewidth]{TeamAtWork1}
+  \caption{T.C. at the WAAD}
+  \label{fig:team_photo_1}
+  \end{subfigure}%
+  \begin{subfigure}{.5\linewidth}
+  \centering
+  \includegraphics[width=0.95\linewidth]{TeamAtWork3}
+  \caption{Rebecca at the WADD}
+  \label{fig:team_photo_3}
+  \end{subfigure}\\[1ex]
+  \begin{subfigure}{\linewidth}
+  \centering
+  \includegraphics[width=0.55\linewidth]{TeamAtWork4}
+  \caption{Chris at the flow model diagram}
+  \label{fig:team_photo_4}
+  \end{subfigure}
+  \caption{The team in action.}
+  \label{fig:test}
+  \end{figure}
+
+\section{WAAD Photos} %15
+% Include a few photos of your WAAD. 
+  \begin{figure}[H]
+  \begin{subfigure}{.5\linewidth}
+  \centering
+  \includegraphics[width=0.95\linewidth]{WAAD_version1}
+  \caption{Phase 1}
+  \label{fig:WAAD_version1}
+  \end{subfigure}%
+  \begin{subfigure}{.5\linewidth}
+  \centering
+  \includegraphics[width=0.95\linewidth]{WAAD_version2}
+  \caption{Phase 2}
+  \label{fig:WAAD_version2}
+  \end{subfigure}\\[1ex]
+  \begin{subfigure}{.5\linewidth}
+  \centering
+  \includegraphics[width=0.95\linewidth]{WAAD_version3}
+  \caption{Phase 3}
+  \label{fig:WAAD_version3}
+  \end{subfigure}%
+  \begin{subfigure}{.5\linewidth}
+  \centering
+  \includegraphics[width=0.95\linewidth]{WAAD_version4}
+  \caption{Phase 4}
+  \label{fig:WAAD_version4}
+  \end{subfigure}\\[1ex]
+  \begin{subfigure}{\linewidth}
+  \centering
+  \includegraphics[width=0.55\linewidth]{WAAD_version5}
+  \caption{Phase 5}
+  \label{fig:WAAD_version5}
+  \end{subfigure}
+  \caption{Evolution of the WAAD.}
+  \label{fig:WAAD}
+  \end{figure}
+
+\section{Work Roles} %16
+% List and describe each of the major work roles, sub-roles, and machine roles. 
   \begin{description} % Numbered list example
   \item[Director]
   Diana George
@@ -182,50 +376,28 @@ The top-level cluster labels were good for overall categorization, but the clust
   \item[Funding] \hfill \\
   People or entities, predominately but not always affiliated with VT, that provide monetary funds to the WC for operational costs.
   \end{description} 
-\section{Flow Diagram}
+
+\section{Flow Model Diagram} %17
+% Show your initial flow model diagram. This should be described from a broad view, not just the flow addressed by your system. 
+  \begin{figure}[H]
+  \centering
+  \includegraphics[width=0.95\linewidth]{flowChart}
+  \caption{Flow Model Diagram}
+  \label{fig:FlowChart}
+  \end{figure}
+
+\section{Work and Machine Role Nodes} %18
+% Show major work roles and machine roles as nodes. 
+
+\section{Information and Work Flow Arcs} %19
+% Show information and work flow as labeled arrows (arcs).
+
+\section{Outside Information Flow} %20
+% Include information flow outside your system (e.g., direct conversations, telephone, etc.) and, where appropriate, label with the channel used (e.g., phone) for each flow. 
 
 
-
-\section{Photos} % Major section
-
-\subsection{Interviews} % Sub-section
-
-\subsection{Raw Data Notes} % Sub-sub-section
-  \subsubsection{Task Data Notes} % Sub-sub-section
-  \subsubsection{Audio Interview Notes} % Sub-sub-section
-  \href{http://www.dropbox.specialorange.com/vt/5714%20UX/}{\textcolor{blue}{Audio Folder}}\\
-  \href{http://www.dropbox.specialorange.com/vt/5714%20UX/ADir1.aac}{\textcolor{blue}{Assistant Director 1}}\\
-  \hspace{1.5cm}\href{http://www.dropbox.specialorange.com/vt/5714%20UX/C1.aac}{\textcolor{blue}{Coach 1}}\\
-
-\subsection{Task Data} % Sub-sub-section
-
-\subsection{Artifacts} % Sub-sub-section
-
-text
-\begin{figure} % Inline image example
-  \begin{center}
-    \includegraphics[width=0.38\textwidth]{fish}
-  \end{center}
-  \caption{Fish}
-\end{figure}
-
-%----------------------------------------------------------------------------------------
-%	CONCLUSION
-%----------------------------------------------------------------------------------------
-\section{Conclusion} % Major section
-
-
-%----------------------------------------------------------------------------------------
-%	BIBLIOGRAPHY
-%----------------------------------------------------------------------------------------
-\begin{thebibliography}{99} % Bibliography - this is intentionally simple in this template
-
-  \bibitem[Figueredo and Wolf, 2009]{Figueredo:2009dg}
-  Figueredo, A.~J. and Wolf, P. S.~A. (2009).
-  \newblock Assortative pairing and life history strategy - a cross-cultural
-    study.
-  \newblock {\em Human Nature}, 20:317--330.
- 
-\end{thebibliography}
+\section{Effect of Proposed System} %21
+% If helpful, draw a "before" and "after" flow model diagram to show the effect of your proposed system on the work practice (e.g., replace manual information organize now done by office staff and filing cabinets with your system and database).
+We dont have an after, just the proposed systems
 
 \end{document}
